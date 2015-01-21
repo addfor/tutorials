@@ -1,0 +1,6 @@
+,City,Name,Revenues,State
+0,New York,Roy,1250, NY 
+1, frisco,Johnn,840,CA
+2,houston,Jim,349,  tx 
+3, taft,Paul,1100,   OK
+4,venice,Ross,900,  IL

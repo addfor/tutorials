@@ -1,0 +1,10 @@
+,City,Likes,State,Views
+0,Page,4,NE,10
+1,Stone,3,KY,9
+2,Rye,0,CO,3
+3,Rye,2,CO,7
+4,Dema,1,KY,4
+5,Keavy,1,KY,2
+6,Rye,0,CO,1
+7,Cairo,3,NE,8
+8,Dumont,7,CO,12
