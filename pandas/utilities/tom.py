@@ -1,6 +1,7 @@
 import os
 
-TEMPDIR="example_data"
+TEMP_DIR="temp"
+EXAMPLE_DIR="example_data"
 
 from generators import generators
 
@@ -17,23 +18,30 @@ class TomTom(object):
 
     def get_tmp_name(self, name):
         """
-        Return an absolute path for a file named name.
+        Return an absolute path for a temporary (output) file named name.
         """
-        return self.cwd + self.sep + TEMPDIR + self.sep + name
+        return self.cwd + self.sep + TEMP_DIR + self.sep + name
 
     def get_tmp_dir(self):
-        return self.cwd + self.sep + TEMPDIR
+        return self.cwd + self.sep + TEMP_DIR
+
+    def get_example_name(self, name):
+        """
+        Return an absolute path for an example (input) file named name.
+        """
+        return self.cwd + self.sep + EXAMPLE_DIR + self.sep + name
+    
 
 
-class FileGenerator(object):
-    __shared__state = {}
-    def __init__(self):
-        self.__dict__ = self.__shared__state
-        self._tom = TomTom()
+# class FileGenerator(object):
+#     __shared__state = {}
+#     def __init__(self):
+#         self.__dict__ = self.__shared__state
+#         self._tom = TomTom()
 
-    def get_example(self, file):
-        path = self._tom.get_tmp_name(file)
-        if not os.path.exists(path):
-            generators[file](self._tom)
+#     def get_example(self, file):
+#         path = self._tom.get_tmp_name(file)
+#         if not os.path.exists(path):
+#             generators[file](self._tom)
 
-        return path
+#         return path

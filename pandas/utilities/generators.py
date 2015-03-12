@@ -10,20 +10,20 @@ def p01_d2csv(tomtom):
     d2.to_csv(tomtom.get_tmp_name('p01_d2.csv'))
 
 def p01_d3csv(tomtom):
-    comuni = pd.read_csv(tomtom.get_tmp_name('tabella_comuni_italiani.txt'),
+    comuni = pd.read_csv(tomtom.get_example_name('tabella_comuni_italiani.txt'),
                          sep=';', header=0)
-#    d3 = pd.DataFrame(np.random.randn(1000, 100), columns=comuni['Comune'].ix[0:199])
+    # d3 = pd.DataFrame(np.random.randn(1000, 100), columns=comuni['Comune'].ix[0:199])
     comuni.to_csv(tomtom.get_tmp_name('p01_d3.csv'), index=False)
 
 def p01_d4csv(tomtom):
     idx = [('Fra', 'one', 'x'),
-       ('Fra', 'two', 'y'),
-       ('Fra', 'two', 'z'),
-       ('Ger', 'one', 'x'),
-       ('Jap', 'one', 'x'),
-       ('Jap', 'two', 'x'),
-       ('USA', 'one', 'y'),
-       ('USA', 'one', 'z')]
+           ('Fra', 'two', 'y'),
+           ('Fra', 'two', 'z'),
+           ('Ger', 'one', 'x'),
+           ('Jap', 'one', 'x'),
+           ('Jap', 'two', 'x'),
+           ('USA', 'one', 'y'),
+           ('USA', 'one', 'z')]
     index = pd.MultiIndex.from_tuples(idx, names=['Country', 'Number', 'Dir'])
     d4 = pd.DataFrame(np.random.randn(8,3), index=index)
     d4.to_csv(tomtom.get_tmp_name('p01_d4.csv'))
@@ -122,12 +122,11 @@ def p07_portfolioh5(tomtom):
 
 def baby_names(tomtom):
     import zipfile
-    path = tomtom.get_tmp_name('babynames.zip')
+    path = tomtom.get_example_name('babynames.zip')
     opath = tomtom.get_tmp_name("")
     z = zipfile.ZipFile(path, "r")
     z.extractall(path=opath)
     
-
 generators = {
     'baby_names/': baby_names,
     'p07_portfolio.h5': p07_portfolioh5,
@@ -143,3 +142,19 @@ generators = {
     'p01_d4.csv': p01_d4csv,
     'p01_volumes.txt': p01_volumes,
     }
+
+def generate_all():
+    from tom import TomTom
+    import os
+    
+    tomtom = TomTom()
+    for filename, gen in generators.iteritems():
+        path = tomtom.get_tmp_name(filename)
+        if not os.path.exists(path):
+            print "Generating {}...".format(filename)
+            gen(tomtom)
+        else:
+            print "Skipped {} (already existing)".format(filename)
+
+if __name__ == '__main__':
+    generate_all()            
