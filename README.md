@@ -14,7 +14,7 @@ We recommend to install the Anaconda distribution to the latest version: please 
 
 ## Index
 
-* **Python + IPython/Jupyter**
+1. **Python + IPython/Jupyter**
     1. [An introduction to the IPython notebook](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/python-ipython/py01v03_ipython_notebook_introduction.ipynb)
     1. [Python Basic Concepts](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/python-ipython/py02v03_python_basics.ipynb)
     1. [Python Getting Started](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/python-ipython/py03v03_python_getting_started.ipynb)
@@ -24,14 +24,14 @@ We recommend to install the Anaconda distribution to the latest version: please 
     1. [Integration of Python with compiled languages](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/python-ipython/py07v03_python_speed-up_with_C.ipynb)
     1. [Unicode](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/python-ipython/py08v03_Unicode.ipynb)
     1. [Regular Expressions](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/python-ipython/py09v03_python_regular_expressions.ipynb)
-* **NumPy**
+1. **NumPy**
     1. [Numpy Basic Concepts](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/numpy/np01v03_numpy_basics.ipynb)
     1. [PyTables](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/numpy/np02v03_numpy_PyTables.ipynb)
     1. [Numpy - Plotting with Matplotlib](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/numpy/np03v03_numpy_plotting.ipynb)
     1. [Scipy - Optimization](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/numpy/np04v03_scipy_optimization.ipynb)
     1. [Scipy Signal Processing: IIR Filter Design](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/numpy/np05v03_scipy_sig_processing_IIRfilter_design.ipynb)
     1. [Symbolic Computation](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/numpy/np06v03_Symbolic_Computation.ipynb)
-* **Pandas**
+1. **Pandas**
     1. [pandas Dataframe - Basic Operativity](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/pandas/pd01v03_basic_data_operativity.ipynb)
     1. [pandas I/O tools and examples](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/pandas/pd02v03_input_output.ipynb)
     1. [Pandas Time series](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/pandas/pd03v03_time_series.ipynb)
@@ -40,7 +40,7 @@ We recommend to install the Anaconda distribution to the latest version: please 
     1. [Split apply and combine](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/pandas/pd06v03_advanced_data_management.ipynb)
     1. [Sources of Open Data](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/pandas/pd07v03_open_data.ipynb)
     1. [Baby Names](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/pandas/pd08v03_babynames.ipynb)
-* **Machine learning**
+1. **Machine learning**
     1. [Definitions and Advices](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml00v03_definitions.ipynb)
     1. [Prepare the Data](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml01v03_prepare_the_data.ipynb)
     1. [The scikit-learn interface](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml02v03_the_scikit-learn_interface.ipynb)
