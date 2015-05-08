@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="23cm" height="13cm" viewBox="275 10 454 248" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="401.5" y="11.5" width="197.75" height="39"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="401.5" y="11.5" width="197.75" height="39"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="401" y="201.392" width="197.75" height="39"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="401" y="201.392" width="197.75" height="39"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="599.25,31 700.586,31 700.586,220.892 608.486,220.892 "/>
+    <polygon style="fill: #000000" points="600.986,220.892 610.986,215.892 608.486,220.892 610.986,225.892 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="600.986,220.892 610.986,215.892 608.486,220.892 610.986,225.892 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="399.358,230.018 300.362,230.018 300.362,20.7136 390.328,20.7136 "/>
+    <polygon style="fill: #000000" points="397.828,20.7136 387.828,25.7136 390.328,20.7136 387.828,15.7136 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="397.828,20.7136 387.828,25.7136 390.328,20.7136 387.828,15.7136 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="399.358,213.754 320.868,213.754 320.868,39.0984 390.328,39.0984 "/>
+    <polygon style="fill: #000000" points="397.828,39.0984 387.828,44.0984 390.328,39.0984 387.828,34.0984 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="397.828,39.0984 387.828,44.0984 390.328,39.0984 387.828,34.0984 "/>
+  </g>
+  <polyline style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #000000" points="333.596,193.955 347.032,199.612 333.596,205.976 346.324,211.632 333.596,217.996 345.618,223.654 333.596,230.018 345.618,236.382 333.596,242.746 346.324,248.402 "/>
+  <text font-size="22.5778" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="465.118" y="37.6842">
+    <tspan x="465.118" y="37.6842">Agent</tspan>
+  </text>
+  <text font-size="22.5778" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="428.572" y="228.108">
+    <tspan x="428.572" y="228.108">Environment</tspan>
+  </text>
+  <text font-size="22.5778" style="fill: #000000;text-anchor:start;font-family:LMMathSymbols10;font-style:italic;font-weight:normal" x="709.778" y="127.487">
+    <tspan x="709.778" y="127.487">a</tspan>
+  </text>
+  <text font-size="16.9333" style="fill: #000000;text-anchor:start;font-family:LMMathItalic9;font-style:italic;font-weight:normal" x="722.506" y="132.437">
+    <tspan x="722.506" y="132.437">t</tspan>
+  </text>
+  <text font-size="22.5778" style="fill: #000000;text-anchor:start;font-family:LMMathSymbols10;font-style:italic;font-weight:normal" x="275.968" y="126.991">
+    <tspan x="275.968" y="126.991">s</tspan>
+  </text>
+  <text font-size="16.9333" style="fill: #000000;text-anchor:start;font-family:LMMathItalic9;font-style:italic;font-weight:normal" x="288.696" y="131.94">
+    <tspan x="288.696" y="131.94">t</tspan>
+  </text>
+  <text font-size="22.5778" style="fill: #000000;text-anchor:start;font-family:LMMathSymbols10;font-style:italic;font-weight:normal" x="360.82" y="248.614">
+    <tspan x="360.82" y="248.614">s</tspan>
+  </text>
+  <text font-size="16.9333" style="fill: #000000;text-anchor:start;font-family:LMMathItalic9;font-style:italic;font-weight:normal" x="373.548" y="253.562">
+    <tspan x="373.548" y="253.562">t+1</tspan>
+  </text>
+  <text font-size="22.5778" style="fill: #000000;text-anchor:start;font-family:LMMathSymbols10;font-style:italic;font-weight:normal" x="360.82" y="203.358">
+    <tspan x="360.82" y="203.358">r</tspan>
+  </text>
+  <text font-size="16.9333" style="fill: #000000;text-anchor:start;font-family:LMMathItalic9;font-style:italic;font-weight:normal" x="367.892" y="208.308">
+    <tspan x="367.892" y="208.308">t</tspan>
+  </text>
+</svg>

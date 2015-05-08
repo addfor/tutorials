@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="26cm" height="14cm" viewBox="376 124 516 276" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="378" y="159" width="250" height="201"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #bfbfbf" x="378" y="159" width="250" height="201"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="425" y="179" width="155" height="46"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="425" y="179" width="155" height="46"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="434" y="205.5">
+    <tspan x="434" y="205.5">Parametrizable Policy</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="425.8" y="297.7" width="155" height="46"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="425.8" y="297.7" width="155" height="46"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="460.8" y="324.2">
+    <tspan x="460.8" y="324.2">Environment</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="736.8" y="236.7" width="155" height="46"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="736.8" y="236.7" width="155" height="46"/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="782.8" y="263.2">
+    <tspan x="782.8" y="263.2">Optimizer</tspan>
+  </text>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="425,202 404,202 404,320.7 421.328,320.7 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="413.564,325.7 423.564,320.7 413.564,315.7 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="580.8,320.7 601.8,320.7 601.8,202 584.472,202 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="592.236,197 582.236,202 592.236,207 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="503.3,343.7 503.3,399 814.3,399 814.3,288.148 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="819.3,295.912 814.3,285.912 809.3,295.912 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="814.3,236.7 814.3,125 502.5,125 502.5,174.528 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="497.5,166.764 502.5,176.764 507.5,166.764 "/>
+  </g>
+  <text font-size="16.9333" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="636" y="387">
+    <tspan x="636" y="387">Return</tspan>
+  </text>
+  <text font-size="16.9333" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="617.8" y="145.45">
+    <tspan x="617.8" y="145.45">Parameters</tspan>
+  </text>
+  <text font-size="16.9333" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="408.8" y="262.45">
+    <tspan x="408.8" y="262.45">Action</tspan>
+  </text>
+  <text font-size="16.9333" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="550.8" y="262.45">
+    <tspan x="550.8" y="262.45">State</tspan>
+  </text>
+</svg>
