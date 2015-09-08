@@ -1,0 +1,380 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: default;
+    background-color: white;
+}
+
+.unselectable {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    /* Introduced in IE 10.
+	   See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ 
+	 */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.selectable {
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    /* Introduced in IE 10.
+	   See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ 
+	 */
+    -ms-user-select: text;
+    user-select: text;
+}
+
+* {
+    font-family: 'fira sans', 'inconsolata', monospace;
+}
+
+h1 {
+    font-size: 18pt;
+    text-transform: lowercase;
+    padding-left: 20px;
+}
+
+#nothing-loaded {
+    color: #cccccc;
+    font-size: 27pt;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+#main-area {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.tree-area {
+    width: 1500px;
+    height: 1000px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+button {
+    background: #162955;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    border-bottom: 5px solid #061539;
+    color: white;
+    position: relative;
+
+    &:not(.disabled):hover {
+	background: #4F628E;
+	border-bottom-color: #162955;
+    }
+
+    &:not(.disabled):active {
+	top: 5px;
+	background: #061539;
+	margin-bottom: 5px;
+	border: none;
+    }
+
+    &.disabled {
+	background-color: #eeeeee;
+	border-bottom-color: #b0b0b0;
+	color: #b0b0b0;
+    }
+}
+
+.btn-load-children {
+    display: block;
+    padding: 2px 10px 0px 5px;
+}
+.btn-load-children span {
+    padding-right: 5px;
+    font-size: 11pt;
+    font-weight: bold;
+    margin: 3px;
+}
+
+#toolbar {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 100;
+    font-size: 10pt;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+
+    & > * {
+	display: inline-block;
+	margin-left: 10px;
+    }
+    
+    button {
+	padding: 5px 15px;
+	font-size: 12pt;
+    }
+    
+    .btn-unlock {
+	padding: 4px 14px;
+    }
+}
+
+#sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    width: 400px;
+    height: 100%;
+    padding: 20px;
+    border-left: 1px solid #dddddd;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding-top: 60px;
+    overflow-y: scroll;
+}
+
+.sidebar-item {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border-top: 1px solid #dddddd;
+    vertical-align: top;
+    max-width: 350px;
+    
+    &:last-child {
+	margin-bottom: 200px;
+    }
+
+    .sidebar-item-toggle {
+	background-color: #eeeeee;
+	border-bottom-color: #b0b0b0;
+	color: #b0b0b0;
+	font-size: 9pt;
+	border-bottom-width: 1px;
+	float: right;
+	position: relative;
+	margin-left: 20px;
+	vertical-align: baseline;
+	padding-top: 5px;
+
+	&:active {
+	    top: 1px;
+	    margin-bottom: 1px;
+	}
+    }
+    
+    .sidebar-item-title {
+	display: inline-block;
+	font-size: 9pt;
+    }
+    
+    .sidebar-item-value {
+	font-size: 14pt;
+	font-weight: bold;
+    }
+    
+    textarea { width: 350px; }
+
+    ul {
+	margin: 0;
+	li { font-size: 8pt; }
+    }
+}
+
+.sidebar-null .sidebar-item {
+    color: #a0a0a0;
+}
+
+.map-program {
+    textarea {
+	font-family: monospace;
+	height: 100px;
+    }
+
+    span { font-size: smaller; }
+    input[type="checkbox"] {
+	outline: 1px solid #aaaaaa;
+	position: relative;
+	top: 3px;
+	margin-right: 5px;
+    }
+}
+
+.sidebar-feature-list {
+    
+    max-height: 400px;
+    overflow-x: visible;
+    padding-right: 50px;
+
+    & > * {
+	margin-left: 20px;
+    }
+    
+    font-size: smaller;
+
+    select {
+	margin-left: 60px;
+    }
+    
+    table {
+	max-width: 300px;
+	border-spacing: 0;
+	line-height: 1em;
+	overflow-y: scroll;
+
+	td.cursorSpace {
+	    width: 20px;
+	    font-size: 8pt;
+	}
+
+	td.selection {
+	    width: 16px;
+	    height: 16px;
+
+	    .checkbox {
+		width: 15px;
+		height: 15px;
+		text-align: center;
+		border-radius: 50%;
+		background: #e0e0e0;
+		margin: 0;
+		&:hover {
+		    background: #a0a0a0;
+		}
+	    }
+	}
+	
+	tr.ui-selecting td.selection .checkbox {
+	    background: #a0a0a0;
+	    &:hover {
+		background: rgb(89, 164, 226);
+	    }
+	}
+
+	tr.ui-selected td.selection .checkbox {
+	    background: steelblue;
+	    &:hover {
+		background: rgb(89, 164, 226);
+	    }
+	}
+
+	td.importance {
+	    line-height: 1em;
+	    
+	    tr.header & {
+		font-size: 8pt;
+	    }
+
+	    .bar {
+	        height: 5px;
+                position: relative;
+		border-width: 1px;
+		border-style: solid;
+	    }
+	}
+    }
+
+    .ui-selectable-helper {
+	position: fixed;
+	left: 0px;
+	width: 20px;
+	border: 1px dashed #202020;
+    }
+}
+
+.sidebar-histogram svg {
+    .bar {
+	rect {
+	    fill: steelblue;
+	}
+	text {
+	    font-size: 8pt;
+	    stroke-width: 2;
+	}
+    }
+
+    #tickbar {
+	line {
+	    stroke: #303030;
+	    stroke-width: 1px;
+	}
+	.avg {
+	    fill: steelblue;
+	}
+    }
+
+    #axis text {
+	font-family: sans-serif;
+	font-size: 8pt;
+    }
+}
+
+.breadcrumbs {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    background: white;
+    padding: 5px;
+    z-index: 10;
+    margin-right: 450px;
+    .item {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	border: none;
+	span {
+	    margin-left: 2px;
+	    margin-right: 4px;
+	}
+	.underline-box {
+	    border: 1px solid steelblue;
+	    border-radius-top-right: 4px;
+	    border-radius-bottom-right: 4px;
+	    position: relative;
+	    height: 4px;
+	}
+	&:hover .feature-name {
+	    text-decoration: underline;
+	}
+    }
+}
+
+.vertical-tabs {
+    position: relative;
+    .tab-bar {
+	position: absolute;
+	float: left;
+	transform: rotate(-90deg);
+    }
+}
+
+.tree-area {
+    .tree-area-debug {
+	position: absolute;
+	bottom: 20px;
+	font-size: 12pt;
+    }
+    
+    svg {
+	path {
+	    vector-effect: non-scaling-stroke;
+	}
+	
+	.selected path {
+	    fill: none;
+	    stroke: black;
+	    stroke-width: 2px;
+	}
+    }
+}
+
+
+
