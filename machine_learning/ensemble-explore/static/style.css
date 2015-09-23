@@ -49,8 +49,8 @@ h1 {
   width: 100%;
 }
 .tree-area {
-  width: 1500px;
-  height: 1000px;
+  width: 800px;
+  height: 580px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -103,18 +103,18 @@ button.disabled {
   margin-left: 10px;
 }
 #toolbar button {
-  padding: 5px 15px;
-  font-size: 12pt;
+  padding: 3px 8px;
+  font-size: 11pt;
 }
 #toolbar .btn-unlock {
-  padding: 4px 14px;
+  padding: 3px 12px;
 }
 #sidebar {
   position: absolute;
   top: 0;
   right: 0;
   float: right;
-  width: 400px;
+  width: 250px;
   height: 100%;
   padding: 20px;
   border-left: 1px solid #dddddd;
@@ -128,7 +128,7 @@ button.disabled {
   padding: 5px;
   border-top: 1px solid #dddddd;
   vertical-align: top;
-  max-width: 350px;
+  max-width: 200px;
 }
 .sidebar-item:last-child {
   margin-bottom: 200px;
@@ -158,7 +158,7 @@ button.disabled {
   font-weight: bold;
 }
 .sidebar-item textarea {
-  width: 350px;
+  width: 200px;
 }
 .sidebar-item ul {
   margin: 0;
@@ -195,7 +195,7 @@ button.disabled {
   margin-left: 60px;
 }
 .sidebar-feature-list table {
-  max-width: 300px;
+  max-width: 200px;
   border-spacing: 0;
   line-height: 1em;
   overflow-y: scroll;
