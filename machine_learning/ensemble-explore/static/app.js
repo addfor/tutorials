@@ -18,14 +18,27 @@ jQueryUI = require('jquery-ui-rjs');
 
 jQueryUI.register($);
 
-colormap = ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c', '#fdbf6f', '#ff7f00', '#cab2d6', '#6a3d9a', '#ffff99', '#b15928'];
+if (window.DataLoader == null) {
+  window.DataLoader = {
+    getTreeNodes: function(cb) {
+      return $.getJSON('/tree/nodes/all', {
+        maxDepth: 3
+      }, cb);
+    },
+    getFeaturesInfo: function(cb) {
+      return $.getJSON('/tree/features_info', cb);
+    }
+  };
+}
+
+colormap = d3.scale.category20c();
 
 leafFill = 'white';
 
 leafStroke = '#a0a0a0';
 
 getCategoryColor = function(i) {
-  return colormap[i % _.size(colormap)];
+  return colormap(i);
 };
 
 mean = function(values) {
@@ -625,15 +638,10 @@ UI = React.createClass({
     return this.reloadFeatures();
   },
   loadNodes: function(rootId, maxDepth) {
-    var options;
     if (rootId == null) {
       rootId = 0;
     }
-    options = {};
-    if (rootId !== 'all' && (maxDepth == null)) {
-      options.maxDepth = 3;
-    }
-    return $.getJSON("/tree/nodes/" + rootId, options, (function(_this) {
+    return DataLoader.getTreeNodes((function(_this) {
       return function(data) {
         _this.addNodes(data);
         return _this.setState({
@@ -643,7 +651,7 @@ UI = React.createClass({
     })(this));
   },
   reloadFeatures: function() {
-    return $.getJSON("/tree/features_info", (function(_this) {
+    return DataLoader.getFeaturesInfo((function(_this) {
       return function(featuresInfo) {
         var colorIdx, featId;
         colorIdx = 0;

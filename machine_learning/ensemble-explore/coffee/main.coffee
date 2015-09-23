@@ -8,6 +8,17 @@ _ = require 'underscore'
 jQueryUI = require 'jquery-ui-rjs'
 jQueryUI.register($)
 
+# Define a DataLoader that retrieves data from the web server, if one
+# isn't defined already. A DataLoader with preloaded data is already
+# provided in the standalone version of the app, so we mustn't
+# override/overwrite it.
+if not window.DataLoader?
+    window.DataLoader =
+        getTreeNodes: (cb) ->
+            $.getJSON '/tree/nodes/all', maxDepth: 3, cb
+
+        getFeaturesInfo: (cb) ->
+            $.getJSON '/tree/features_info', cb
 
 # colormap = [
 #     '#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c',
@@ -34,10 +45,10 @@ SidebarText = React.createClass
         React.DOM.div
             className: "sidebar-item-value"
             @props.text
-    
+
 SidebarItem = React.createClass
     getInitialState: -> { expanded: true }
-    
+
     render: () ->
         React.DOM.div
             className: "sidebar-item"
@@ -65,7 +76,7 @@ histStyle =
 SidebarDistHist = React.createClass
     getInitialState: () ->
         element = document.createElement('div')
-        
+
         svg = d3.select(element)
             .append 'svg'
             .attr 'width', histStyle.width
@@ -79,7 +90,7 @@ SidebarDistHist = React.createClass
             .attr('points', '-4,0 0,-5 4,0')
 
         return { element: element }
-    
+
     componentDidMount: () ->
         container = @refs['hist-container'].getDOMNode()
         $(container).empty().append(@state.element)
@@ -89,7 +100,7 @@ SidebarDistHist = React.createClass
         bins = null
         x = null
         domain = null
-        
+
         nBins = @props.numBins ? 15
         histogram = d3.layout.histogram().bins(nBins)
 
@@ -99,7 +110,7 @@ SidebarDistHist = React.createClass
             @props.min ? _.min(data),
             @props.max ? _.max(data)
         ]
-        
+
         x = d3.scale.linear()
             .domain domain
             .range [margin.left, width - margin.right]
@@ -123,15 +134,15 @@ SidebarDistHist = React.createClass
 
         element = @state.element
         svg = d3.select(element).select('svg')
-        
+
         bar = svg.selectAll('.bar').data(bins)
 
         enter = bar.enter().append('g').attr('class', 'bar')
         enter.append('text')
         enter.append('rect')
-	
+
         bar.exit().remove()
-        
+
         bar.attr 'transform', (d) -> "translate("+x(d.x)+", 0)"
 
         bar.select 'rect'
@@ -142,7 +153,7 @@ SidebarDistHist = React.createClass
 
         bar.select 'text'
             .style 'text-anchor', 'middle'
-            .text (d,i) -> if d.y == 0 then "" else d.y+"" 
+            .text (d,i) -> if d.y == 0 then "" else d.y+""
             .attr 'transform', (d) ->
                 tx = (x(d.x + d.dx) - x(d.x) - 1) / 2
                 ty = y(d.y)-10
@@ -168,7 +179,7 @@ SidebarDistHist = React.createClass
         axis = svg.select('#axis')
         axis.attr 'transform',
             'translate(0, '+(height - margin.bottom - xAxisHeight)+')'
-            
+
         axis.select('*').remove()
         axis.append 'g'
             .call xAxis
@@ -176,11 +187,11 @@ SidebarDistHist = React.createClass
             .attr 'style', ''
             .style 'text-anchor', 'left'
             .attr 'transform', 'translate(5,0) rotate(60)'
-    
+
     render: () ->
         try
             @renderD3()
-            
+
         @avg = @props.avg or mean(@props.data)
         return React.DOM.div null,
             React.DOM.ul null,
@@ -193,7 +204,7 @@ SidebarDistHist = React.createClass
 SidebarDistribution = React.createClass
     render: () ->
         data = @props.data
-        
+
         if not data? or data.length == 0
             React.createElement SidebarText, text: "N/A"
         else if data.length == 1
@@ -208,7 +219,7 @@ SidebarDistribution = React.createClass
                 min: @props.min
                 max: @props.max
                 tickFormat: @props.tickFormat
-            
+
 SidebarChildrenBtn = React.createClass
     render: () ->
         if @props.isLeaf or not @props.count? or @props.count == 0
@@ -224,20 +235,20 @@ SidebarChildrenBtn = React.createClass
 
 SidebarFeatureList = React.createClass
     getInitialState: -> { importanceAlgo: 'gini' }
-    
+
     render: () ->
         features = @props.featuresInfo
-        
+
         importanceAttrName = 'importance_' + @state.importanceAlgo
         getImportance = (f) -> f[importanceAttrName]
-        
+
         leafInfo = _.extend features["-2"], id: "-2"
         features = _.omit features, "-2"
         featuresList = _.map features, (f, id) -> _.extend(f, id: id)
         featuresList = _.sortBy featuresList, (f) -> -getImportance(f)
         if leafInfo
             featuresList = [leafInfo].concat(featuresList)
-            
+
         importances = _.map features, getImportance
         maxImportance = _.max importances
         minImportance = _.min importances
@@ -261,7 +272,7 @@ SidebarFeatureList = React.createClass
             featureId = f.id
             selected = (featureId == @props.selectedNode?.featureId+"")
 
-            cursorSpace = React.DOM.td 
+            cursorSpace = React.DOM.td
                 className: "cursorSpace " +
                     (if selected then 'selected' else ''),
                 style:
@@ -284,10 +295,10 @@ SidebarFeatureList = React.createClass
             else
                 marginPerc = -Math.min(minImportance, 0)
                 widthPerc = importance
-                
+
             marginPerc = marginPerc / importanceRange * 100
             widthPerc = widthPerc / importanceRange * 100
-            
+
             importance = React.DOM.td className: 'importance',
                 React.DOM.span
                     className: 'name'
@@ -318,11 +329,11 @@ SidebarFeatureList = React.createClass
         algoSelect = React.DOM.select
             className: 'algo-select'
             value: @state.importanceAlgo
-            onChange: (event) => 
+            onChange: (event) =>
                 @setState importanceAlgo: event.target.value
             React.DOM.option { value: 'gini' }, 'Gini index decrease'
             React.DOM.option { value: 'oob' },  'OOB estimation accuracy decrease'
-        
+
         React.DOM.div
             className: 'sidebar-feature-list'
             algoSelect
@@ -333,7 +344,7 @@ SidebarFeatureList = React.createClass
                 table
 
     componentDidMount: () -> @reinstallSelectable()
-    
+
     reinstallSelectable: () ->
         container = @refs['container'].getDOMNode()
         $(container).find("table tbody").selectable
@@ -383,7 +394,7 @@ Sidebar = React.createClass
         clsName = if @props.node? then 'sidebar' else 'sidebar-null'
         featuresInfo = @props.featuresInfo
         node = @props.node
-        
+
         panes = []
 
         panes.push React.createElement SidebarItem,
@@ -402,7 +413,7 @@ Sidebar = React.createClass
             if node?
                 _.all node.childrenIds, (childId) =>
                     @props.tree[childId].visible
-            
+
         panes.push React.createElement SidebarItem,
             key: 'sidebar-children'
             title: 'Children',
@@ -418,14 +429,14 @@ Sidebar = React.createClass
             content: React.createElement MapProgramInput,
                 onMapProgramChange: (args...) =>
                     @props.onMapProgramChange(args...)
-        
+
         panes.push React.createElement SidebarItem,
             title: 'Features'
             content: React.createElement SidebarFeatureList,
                 featuresInfo: @props.featuresInfo
                 selectedNode: node,
                 onFilterChange: @props.onFilterChange
-    
+
         if node?
             panes.push React.createElement SidebarItem,
                 key: 'sidebar-value'
@@ -449,7 +460,7 @@ Sidebar = React.createClass
             content: React.createElement SidebarDistribution,
                 data: node?.num_samples
                 tickFormat: '.0f'
-                
+
         React.DOM.div
             id: "sidebar"
             className: clsName
@@ -461,7 +472,7 @@ MapProgramInput = React.createClass
         exception: null,
         enabled: true
     }
-    
+
     render: ->
         onTimeout = =>
             if @state.enabled
@@ -474,7 +485,7 @@ MapProgramInput = React.createClass
                 @props.onMapProgramChange ast
             else
                 @props.onMapProgramChange null
-        
+
         React.DOM.div className: 'map-program',
             React.DOM.textarea
                 ref: 'input'
@@ -505,7 +516,7 @@ MapProgramInput = React.createClass
                 React.DOM.div className: 'status ok',
                     "OK"
 
-                    
+
 UI = React.createClass
     getInitialState: () ->
         return {
@@ -524,43 +535,37 @@ UI = React.createClass
         @reloadFeatures()
 
     loadNodes: (rootId=0, maxDepth) ->
-        options = {}
-        if rootId != 'all' and not maxDepth?
-            options.maxDepth = 3
-            
-        $.getJSON "/tree/nodes/"+rootId,
-            options,
-            (data) =>
-                @addNodes(data)
-                @setState reloading: false
+        DataLoader.getTreeNodes (data) =>
+            @addNodes(data)
+            @setState reloading: false
 
     reloadFeatures: ->
-        $.getJSON "/tree/features_info", (featuresInfo) =>
+        DataLoader.getFeaturesInfo (featuresInfo) =>
             colorIdx = 0
-            
+
             for featId of featuresInfo
                 featuresInfo[featId] = _.extend featuresInfo[featId],
                     isFiltered: true
                     fill: getCategoryColor(colorIdx)
                     stroke: '#fcfcfc'
                 colorIdx++
-            
+
             featuresInfo["-2"] = {
                 name: "(leaf)"
                 isFiltered: true
                 fill: leafFill
                 stroke: leafStroke
             }
-            
+
             @setState featuresInfo: featuresInfo
-        
+
     addNodes: (tree) ->
         nodesById = @state.nodesById
         _.each _.keys(tree), (id) ->
             node = tree[id]
             node.id = id
             node.isLeaf = (node.featureId == "-2")
-            
+
             # NOTE: getting undefined's into node.children causes exceptions
             # in D3 (3.5.5)
             # NOTE: d3.partition overwrites some properties in each node
@@ -574,7 +579,7 @@ UI = React.createClass
             nodesById[id] = node
 
         @recollectOutputs()
-        
+
         if @isMounted()
             @setState
                 nodesById: nodesById
@@ -597,15 +602,15 @@ UI = React.createClass
             for outputId, outputVals of child.outputs
                 nodeOut[outputId] ?= []
                 nodeOut[outputId] = nodeOut[outputId].concat(outputVals)
-        
+
     onNodeSelect: (node, options) ->
         if not node.parent # root node can't be selected
             return
-            
+
         lock = options?.lock or false
         if @state.selectionLocked and !lock
             return
-        
+
         @setState
             selectedNode: node,
             selectionLocked: lock
@@ -641,10 +646,10 @@ UI = React.createClass
                     newFeatures[id].isFiltered = not oldVal
             else
                 return
-                
+
         @setState featuresInfo: newFeatures
 
-    componentDidMount: ->  
+    componentDidMount: ->
         @reload()
 
     render: ->
@@ -674,7 +679,7 @@ UI = React.createClass
                 selectedNode: @state.selectedNode
                 featuresInfo: @state.featuresInfo
                 mapFunc: @state.mapProgram
-                
+
             React.DOM.div
                 id: "toolbar"
                 key: "toolbar"
@@ -696,7 +701,7 @@ UI = React.createClass
                     key: "btn-reload"
                     onClick: () => @reload()
                     "Reload data"
-            
+
             if @state.selectedNode?
                 React.createElement Breadcrumbs,
                     key: 'breadcrumbs'
@@ -721,9 +726,8 @@ UI = React.createClass
                         child.visible = true
                     @setState treeVersion: (@state.treeVersion + 1)
                     @forceUpdate()
-                    
+
 $ ->
     ui = React.createElement(UI)
     element = document.getElementById('main-area')
     React.render(ui, element)
-    

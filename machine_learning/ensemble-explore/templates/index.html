@@ -6,11 +6,29 @@
 		<meta charset="utf-8" />
 		<title>Random forest exploration</title>
 
-		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.3.0/css/font-awesome.min.css') }}">
-		
-		<script src="{{ url_for('static', filename='app.js') }}"></script>
-		
+		{% if is_standalone %}
+			{# No webserver: the resources are included inline #}
+
+			<style type="text/css">
+				{{ stylesheet|safe }}
+				{{ font_awesome|safe }}
+			</style>
+
+			<script type="text/javascript">
+				{% include 'data_loader_standalone.js' %}
+				{{ javascript|safe }}
+			</script>
+
+		{% else %}
+			{# The app is backed by the webserver: the browser 
+			   will load resources from it #}
+
+			<link rel="stylesheet" type="text/css"
+			      href="{{ url_for('static', filename='style.css') }}" />
+			<link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.3.0/css/font-awesome.min.css') }}" />
+			<script src="{{ url_for('static', filename='app.js') }}"></script>
+		{% endif %}
+
 	</head>
 
 	<body>
