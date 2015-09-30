@@ -1,0 +1,8 @@
+(lp0
+Vone
+p1
+aVtwo
+p2
+aVthree
+p3
+a.
