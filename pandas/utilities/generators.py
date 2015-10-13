@@ -1,5 +1,5 @@
 import pandas as pd
-from pandas.io.data import DataReader
+from pandas_datareader.data import DataReader
 import numpy as np
 
 def p01_d2csv(tomtom):
