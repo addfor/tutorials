@@ -1,2 +1,2 @@
-from plot_utilities import plot_01
+from .plot_utilities import plot_01
 
