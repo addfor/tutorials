@@ -1,7 +1,7 @@
 import numpy as np
 from pylab import *
 from pandas import *
-from pandas.io.data import *
+#from pandas.io.data import *
     
 def montecarloPlot(S):
     cols, rows = S.shape
