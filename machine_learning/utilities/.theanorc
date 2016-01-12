@@ -1,0 +1,12 @@
+[global]
+device=gpu
+mode=FAST_RUN
+floatX=float32
+allow_gc=False
+optimizer_including=local_remove_all_assert
+[gcc]
+cxxflags=-O3 -funroll-loops -ftracer
+[nvcc]
+fastmath = True
+[cuda]
+root=/usr/local/cuda
