@@ -50,4 +50,12 @@ We recommend to install the Anaconda distribution to the latest version: please 
     1. [Ensemble Methods Advanced](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml06v04_ensemble_methods_advanced.ipynb)
     1. [Support vector machines (SVMs)](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml13v04_support_vector_machines.ipynb)
     1. [Predict Temporal Series](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml15v04_predict_temporal_series.ipynb)
-
+    1. [Theano Basic Concepts](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml20v04_theano_basics.ipynb)
+    1. [Explore Neural Network Hyperparameters with Theano and Keras](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml21v04_theano_NN_explore_hyperparameters.ipynb)
+    1. [Neural Networks with Nervana Neon library](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml23v04_neon_NN_basics_and_hyperparameters-py27.ipynb)
+    1. [Tensorflow Basic concepts](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml25v04_tensorflow_basics.ipynb)
+    1. [Explore Neural Network Hyperparameters with TensorFlow](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml26v04_tensorflow_NN_explore_hyperparameters.ipynb)
+    1. [Keras - Theano Benchmark](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml30v04_Keras_NN_test.ipynb)
+    1. [Neon Benchmark](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml31v04_Neon_NN_test.ipynb)
+    1. [TensorFlow Benchmark](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml32v04_TensorFlow_NN_test.ipynb)
+    1. [Neural Network Benchmark Summary](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml33v04_NN_benchmark.ipynb)
