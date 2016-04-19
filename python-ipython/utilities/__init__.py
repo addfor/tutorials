@@ -1,1 +1,1 @@
-import my_module
+from . import my_module

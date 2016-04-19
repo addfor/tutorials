@@ -29,5 +29,5 @@ def _my_private_function(first_name, second_name):
     
 if __name__ == '__main__':
     ''' This is a Unit Test: use "run my_module" from Python interpreter'''
-    print 'This is the testing code:'
-    print my_function(('Johnn', 'Doe'))
+    print('This is the testing code:')
+    print(my_function(('Johnn', 'Doe')))
