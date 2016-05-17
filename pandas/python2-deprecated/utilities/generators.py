@@ -1,7 +1,6 @@
 import pandas as pd
 from pandas_datareader.data import DataReader
 import numpy as np
-from .tom import TomTom
 
 def p01_d2csv(tomtom):
     d = {'a' : pd.Series(['one','one','two','three','two']),
@@ -79,9 +78,9 @@ def p07_d2csv(tomtom):
     N = 1000
     def rands(n):
         choices = string.ascii_uppercase
-        return ''.join([random.choice(choices) for _ in range(n)])
+        return ''.join([random.choice(choices) for _ in xrange(n)])
 
-    tickers = np.array([rands(5) for _ in range(N)])
+    tickers = np.array([rands(5) for _ in xrange(N)])
 
     # Create a DataFrame containing 3 columns representing
     # hypothetical, but random portfolios for a subset of tickers:
@@ -104,9 +103,9 @@ def p07_portfolioh5(tomtom):
     N = 1000
     def rands(n):
         choices = string.ascii_uppercase
-        return ''.join([random.choice(choices) for _ in range(n)])
+        return ''.join([random.choice(choices) for _ in xrange(n)])
 
-    tickers = np.array([rands(5) for _ in range(N)])
+    tickers = np.array([rands(5) for _ in xrange(N)])
     fac1, fac2, fac3 = np.random.rand(3, 1000)
     ticker_subset = tickers.take(np.random.permutation(N)[:1000])
 
@@ -145,16 +144,17 @@ generators = {
     }
 
 def generate_all():
+    from tom import TomTom
     import os
     
     tomtom = TomTom()
-    for filename, gen in generators.items():
+    for filename, gen in generators.iteritems():
         path = tomtom.get_tmp_name(filename)
         if not os.path.exists(path):
-            print("Generating {}...".format(filename))
+            print "Generating {}...".format(filename)
             gen(tomtom)
         else:
-            print("Skipped {} (already existing)".format(filename))
+            print "Skipped {} (already existing)".format(filename)
 
 if __name__ == '__main__':
     generate_all()            

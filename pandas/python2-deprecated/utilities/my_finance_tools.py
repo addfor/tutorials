@@ -18,14 +18,14 @@ def csv_preview(filename, lines_to_print=5):
     with open(filename) as fid:
         for _ in range(lines_to_print):
             line = fid.readline()
-            print(line,)
+            print line,
 
 def side_by_side(*objs, **kwds):
     space = kwds.get('space', 4)
     reprs = [repr(obj).split('\n') for obj in objs]
-    print('-'*40)
-    print(pd.core.common.adjoin(space, *reprs))
-    print('-'*40)
+    print '-'*40
+    print pd.core.common.adjoin(space, *reprs)
+    print '-'*40
 
 def getQuotes(symbol, start, end):
     '''getQuotes documentation'''

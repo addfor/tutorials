@@ -3,7 +3,7 @@ import os
 TEMP_DIR="temp"
 EXAMPLE_DIR="example_data"
 
-from generators import generators
+#from generators import generators
 
 class TomTom(object):
     """
