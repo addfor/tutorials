@@ -51,6 +51,7 @@ We recommend to install the Anaconda distribution to the latest version: please 
     1. [Support vector machines (SVMs)](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml13v04_support_vector_machines.ipynb)
     1. [Predict Temporal Series](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml15v04_predict_temporal_series.ipynb)
     1. [Forecasting with LSTM](http://nbviewer.jupyter.org/github/addfor/tutorials/blob/master/machine_learning/ml16v04_forecasting_with_LSTM.ipynb)
+    1. [Prognostics using Autoencoder](http://nbviewer.jupyter.org/github/addfor/tutorials/blob/master/machine_learning/ml17v04_prognostics_using_autoencoder.ipynb)
     1. [Theano Basic Concepts](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml20v04_theano_basics.ipynb)
     1. [Explore Neural Network Hyperparameters with Theano and Keras](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml21v04_theano_NN_explore_hyperparameters.ipynb)
     1. [Neural Networks with Nervana Neon library](http://nbviewer.ipython.org/github/addfor/tutorials/blob/master/machine_learning/ml23v04_neon_NN_basics_and_hyperparameters-py27.ipynb)
