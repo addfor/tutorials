@@ -195,7 +195,6 @@ dependencies:
 - zeromq=4.1.5=0
 - zlib=1.2.8=3
 - pip:
-  - addutils==0.5.4
   - backports.shutil-get-terminal-size==1.0.0
   - et-xmlfile==1.0.1
   - ipython-genutils==0.1.0
@@ -203,6 +202,7 @@ dependencies:
   - jupyter-console==5.0.0
   - jupyter-core==4.2.1
   - leveldb==0.194
+  - liac-arff==2.1.0
   - nb-anacondacloud==1.2.0
   - nb-conda==2.0.0
   - nb-conda-kernels==2.0.0

@@ -22,7 +22,7 @@ def plot_bias_variance(N=8, random_seed=42, err=0.5):
     for i, d in enumerate(degrees):
         fig = bk.figure(plot_width=240, plot_height=240,
                         title=titles[i], x_range=(-0.2, 1.2), y_range=(0, 12))
-        fig.title_text_font_size = '11pt'
+        fig.title.text_font_size = '11pt'
         fig.xaxis.axis_label_text_font_size = '9pt'
         fig.yaxis.axis_label_text_font_size = '9pt'
         fig.x(x, y, color='black', size=12)
