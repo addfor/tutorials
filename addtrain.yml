@@ -5,8 +5,8 @@ dependencies:
 - _license=1.1=py35_1
 - _nb_ext_conf=0.3.0=py35_0
 - alabaster=0.7.9=py35_0
-- anaconda=4.3.0=np111py35_0
 - anaconda-client=1.6.0=py35_0
+- anaconda=custom=py35_0
 - anaconda-navigator=1.4.3=py35_0
 - argcomplete=1.0.0=py35_1
 - astroid=1.4.9=py35_0
@@ -79,7 +79,7 @@ dependencies:
 - jupyter_core=4.2.1=py35_0
 - lazy-object-proxy=1.2.2=py35_0
 - libffi=3.2.1=1
-- libgcc=4.8.5=2
+- libgcc=5.2.0=0
 - libgfortran=3.0.0=1
 - libiconv=1.14=0
 - libpng=1.6.27=0
@@ -195,7 +195,9 @@ dependencies:
 - zeromq=4.1.5=0
 - zlib=1.2.8=3
 - pip:
+  - addutils==0.5.4
   - backports.shutil-get-terminal-size==1.0.0
+  - distribute==0.7.3
   - et-xmlfile==1.0.1
   - ipython-genutils==0.1.0
   - jupyter-client==4.4.0
@@ -211,5 +213,6 @@ dependencies:
   - python-gflags==3.1.1
   - rope-py3k==0.9.4.post1
   - tables==3.3.0
+  - xgboost==0.6a2
 prefix: /home/matteo/anaconda3/envs/addtrain
 
