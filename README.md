@@ -1,4 +1,4 @@
-# Training Material | Addfor s.p.a.
+# Training Material | Addfor S.p.A.
 
 The following IPython Notebooks are the standard training material distributed with the Addfor trainings. For more information about standard and custom training solutions please visit [Training @ Addfor](http://www.add-for.com/solutions/training/).
 

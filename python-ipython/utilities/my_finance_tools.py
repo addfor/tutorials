@@ -4,7 +4,7 @@ from pandas import Index, DataFrame
 from pandas.core.datetools import BMonthEnd
 
 # MY FINANCE TOOLS -------------------------------------------------------------
-''' Created by: Addfor s.p.a.
+''' Created by: Addfor S.p.A.
     This module provides few example finance functions
     '''
 
