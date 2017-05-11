@@ -2,3 +2,5 @@
 *.pyc
 */temp/*
 !*/temp/temporary.txt
+*/example_data/*
+*/MNIST_data/*
