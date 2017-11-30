@@ -8,7 +8,7 @@ All the IPython notebooks are distributed under the Creative Commons Attribution
 
 For detailed installation instructions visit: [Download training material guidelines @ Addfor](http://www.add-for.com/solutions/training/)
 
-All notebooks use our Addutils library: please install [Addutils](https://dl.dropboxusercontent.com/u/3172021/Addutils.zip) before running the Notebooks.
+All notebooks use our Addutils library: please install Addutils for [python2](https://www.dropbox.com/s/girpyr3abs4c4hk/AddUtils-0.5.4.zip) or [python3](https://www.dropbox.com/s/g2vibmklfn2smz3/AddUtils-0.5.4-py34.zip) before running the Notebooks.
 
 We recommend to install the Anaconda distribution to the latest version: please visit [continuum.io](https://www.continuum.io/downloads) to download Anaconda.
 
