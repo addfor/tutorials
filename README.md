@@ -1,12 +1,12 @@
 # Training Material | Addfor S.p.A.
 
-The following IPython Notebooks are the standard training material distributed with the Addfor trainings. For more information about standard and custom training solutions please visit [Training @ Addfor](http://www.add-for.com/solutions/training/).
+The following IPython Notebooks are the standard training material distributed with the Addfor trainings. For more information about standard and custom training solutions please visit [Training @ Addfor](https://www.add-for.com/training/).
 
 All the IPython notebooks are distributed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 
 ## Installation instructions
 
-For detailed installation instructions visit: [Download training material guidelines @ Addfor](http://www.add-for.com/solutions/training/)
+For detailed installation instructions visit: [Download training material guidelines @ Addfor](https://www.add-for.com/downloads-tutorials/)
 
 All notebooks use our Addutils library: please install Addutils for [python2](https://www.dropbox.com/s/girpyr3abs4c4hk/AddUtils-0.5.4.zip) or [python3](https://www.dropbox.com/s/g2vibmklfn2smz3/AddUtils-0.5.4-py34.zip) before running the Notebooks.
 
