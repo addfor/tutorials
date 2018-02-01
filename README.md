@@ -6,11 +6,24 @@ All the IPython notebooks are distributed under the Creative Commons Attribution
 
 ## Installation instructions
 
-For detailed installation instructions visit: [Download training material guidelines @ Addfor](https://www.add-for.com/downloads-tutorials/)
+We recommend to install the Anaconda distribution to the latest version: please visit [continuum.io](https://www.continuum.io/downloads) to download Anaconda. The tutorials works with python3 (python2 is no longer supported). Next update the distribution to the latest release: `conda update anaconda`.
 
-All notebooks use our Addutils library: please install Addutils for [python2](https://www.dropbox.com/s/girpyr3abs4c4hk/AddUtils-0.5.4.zip) or [python3](https://www.dropbox.com/s/g2vibmklfn2smz3/AddUtils-0.5.4-py34.zip) before running the Notebooks.
+Clone this repository with git; use this command: `git clone --depth 1 https://github.com/addfor/tutorials` if you want to download only the current commit (faster, takes less disk space):
 
-We recommend to install the Anaconda distribution to the latest version: please visit [continuum.io](https://www.continuum.io/downloads) to download Anaconda.
+> Create a shallow clone with a history truncated to the specified number of commits.
+
+Next cd into tutorials and create the environment addfor_tutorials from the file `addfor_tutorials.yml` (make sure the file is in your directory). Issue the command `conda env create -f addfor_tutorials.yml` (the process could take few minutes). After the installation is finished, activate the environment:
+
+> Windows: `activate myenv`
+> macOS and Linux: `source activate myenv`
+
+All notebooks use our Addutils library: please install [Addutils](https://www.dropbox.com/s/g2vibmklfn2smz3/AddUtils-0.5.4-py34.zip) (for python3) before running the Notebooks. Download the zip file and open the Terminal or Anaconda Prompt: `source activate addfor_tutorials` if environment is not already active, then type `pip install AddUtils-0.5.4-py34.zip` (it should work for python3.4+).
+
+At this point you are able to run the notebook with: `jupyter-notebook` and navigate through the directory tree.
+
+**Note**: the first time you run the notebooks you could experience a brief slowdown due to matplotlib building its font cache. It should disappear the next session.
+
+For more informations visit: [Download training material guidelines @ Addfor](https://www.add-for.com/downloads-tutorials/)
 
 ## Index
 
