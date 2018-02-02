@@ -6,11 +6,13 @@ All the IPython notebooks are distributed under the Creative Commons Attribution
 
 ## Installation instructions
 
-We recommend to install the Anaconda distribution to the latest version: please visit [continuum.io](https://www.continuum.io/downloads) to download Anaconda. The tutorials works with python3 (python2 is no longer supported). Next update the distribution to the latest release: `conda update anaconda`.
+We recommend to install the Anaconda distribution to the latest version: please visit [continuum.io](https://www.continuum.io/downloads) to download Anaconda. The tutorials work with python3 (python2 is no longer supported). After Anaconda installation update the distribution to the latest release: `conda update anaconda`.
 
 Clone this repository with git; use this command: `git clone --depth 1 https://github.com/addfor/tutorials` if you want to download only the current commit (faster, takes less disk space):
 
 > Create a shallow clone with a history truncated to the specified number of commits.
+
+**NOTE:** for Windows users, you can use this [git client](http://gitforwindows.org/), or choose to download: click *Clone or download* and then *Download ZIP* (in this case skip the git clone step).
 
 Next cd into tutorials and create the environment addfor_tutorials from the file `addfor_tutorials.yml` (make sure the file is in your directory). Issue the command `conda env create -f addfor_tutorials.yml` (the process could take few minutes). After the installation is finished, activate the environment:
 
