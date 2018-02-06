@@ -2,7 +2,7 @@ from datetime import datetime
 import matplotlib.finance as fin
 import pandas as pd
 from pandas import Index, DataFrame
-from pandas.core.datetools import BMonthEnd
+# from pandas.core.datetools import BMonthEnd
 
 # MY FINANCE TOOLS -------------------------------------------------------------
 ''' Created by: Addfor S.p.A.
@@ -38,7 +38,7 @@ def getQuotes(symbol, start, end):
     return DataFrame(data, index=dates)
     
 
-def toMonthly(frame, how):
-    '''toMonthly documentation'''
-    offset = BMonthEnd()
-    return frame.groupby(offset.rollforward).aggregate(how)
+# def toMonthly(frame, how):
+#     '''toMonthly documentation'''
+#     offset = BMonthEnd()
+#     return frame.groupby(offset.rollforward).aggregate(how)

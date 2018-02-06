@@ -2,6 +2,8 @@ import pandas as pd
 from pandas_datareader.data import DataReader
 import numpy as np
 from .tom import TomTom
+import os
+
 
 def p01_d2csv(tomtom):
     d = {'a' : pd.Series(['one','one','two','three','two']),
@@ -145,8 +147,6 @@ generators = {
     }
 
 def generate_all():
-    import os
-    
     tomtom = TomTom()
     for filename, gen in generators.items():
         path = tomtom.get_tmp_name(filename)
