@@ -1,6 +1,7 @@
 .ipynb_checkpoints
 *.pyc
 */temp/*
+*/tmp/*
 !*/temp/temporary.txt
 */example_data/*
 */MNIST_data/*
