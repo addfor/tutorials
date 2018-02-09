@@ -1,8 +1,10 @@
 import pandas as pd
 from pandas_datareader.data import DataReader
+from pandas_datareader._utils import RemoteDataError
 import numpy as np
 from .tom import TomTom
 import os
+import shutil
 
 
 def p01_d2csv(tomtom):
@@ -32,24 +34,40 @@ def p01_d4csv(tomtom):
     d4.to_csv(tomtom.get_tmp_name('p01_d4.csv'))
 
 def p01_prices(tomtom):
-    symbols = ['AAPL', 'JNJ', 'XOM', 'GOOG']
-    data = dict([(sym, DataReader(sym, 'yahoo')['Close']) for sym in symbols])
-    df = pd.DataFrame.from_dict(data)
-    df.ix[-7:-1].to_csv(tomtom.get_tmp_name('p01_prices.txt'))
+    try:
+        symbols = ['AAPL', 'JNJ', 'XOM', 'GOOG']
+        data = dict([(sym, DataReader(sym, 'yahoo')['Close']) for sym in symbols])
+        df = pd.DataFrame.from_dict(data)
+        df.ix[-7:-1].to_csv(tomtom.get_tmp_name('p01_prices.txt'))
+    except RemoteDataError:
+        print('Error while reading data, revert to stored file in example_data')
+        shutil.copy('example_data/p01_prices.txt', 'temp')
 
 def p01_volumes(tomtom):
-    symbols = ['AAPL', 'JNJ', 'XOM']
-    data = dict([(sym, DataReader(sym, 'yahoo')['Volume']) for sym in symbols])
-    df = pd.DataFrame.from_dict(data)
-    df.ix[-7:-3].to_csv(tomtom.get_tmp_name('p01_volumes.txt'))
+    try:
+        symbols = ['AAPL', 'JNJ', 'XOM']
+        data = dict([(sym, DataReader(sym, 'yahoo')['Volume']) for sym in symbols])
+        df = pd.DataFrame.from_dict(data)
+        df.ix[-7:-3].to_csv(tomtom.get_tmp_name('p01_volumes.txt'))
+    except RemoteDataError:
+        print('Error while reading data, revert to stored file in example_data')
+        shutil.copy('example_data/p01_volumes.txt', 'temp')
     
 def p03_DAX(tomtom):
-    DAX = DataReader('^GDAXI','yahoo',start = '01/01/2000')
-    DAX.to_csv(tomtom.get_tmp_name('p03_DAX.csv'))
+    try:
+        DAX = DataReader('^GDAXI','yahoo',start = '01/01/2000')
+        DAX.to_csv(tomtom.get_tmp_name('p03_DAX.csv'))
+    except RemoteDataError:
+        print('Error while reading data, revert to stored file in example_data')
+        shutil.copy('example_data/p03_DAX.csv', 'temp')
 
 def p03_AAPL(tomtom):
-    DAX = DataReader('AAPL','yahoo',start = '01/01/2000')
-    DAX.to_csv(tomtom.get_tmp_name('p03_AAPL.csv'))
+    try:
+        DAX = DataReader('AAPL','yahoo',start = '01/01/2000')
+        DAX.to_csv(tomtom.get_tmp_name('p03_AAPL.csv'))
+    except RemoteDataError:
+        print('Error while reading data, revert to stored file in example_data')
+        shutil.copy('example_data/p03_AAPL.csv', 'temp')
 
 def p06_d3csv(tomtom):
     d2 = pd.DataFrame({'City' : ['New York', ' frisco', 'houston', ' taft', 'venice'],
