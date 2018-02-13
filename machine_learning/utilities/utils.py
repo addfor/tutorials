@@ -1,3 +1,5 @@
+import functools
+
 def lazy_property(function):
     attribute = '_lazy_' + function.__name__
     
