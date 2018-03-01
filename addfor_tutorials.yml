@@ -22,3 +22,4 @@ dependencies:
   - h5py=2.7.1
   - pip:
     - liac-arff==2.1.1
+    - pillow==5.0.0
